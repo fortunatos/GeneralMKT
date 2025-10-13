@@ -105,12 +105,26 @@
     // Link de afiliado codificado em Base64
 const encodedLink = "aHR0cHM6Ly9iZ2ZmZmlnLmh1YmZsb3dzbS5jb20vcy82M2QwMGUyNDBmY2Q1P3N1YnNvdXJjZT1Ib29rVXA=";
     const destination = atob(encodedLink);
+    
+  })();
 
-    // Redireciona após 1.5 segundos
-    setTimeout(() => {
+jQuery(document).ready(function(){
+       if (document.cookie.indexOf('visited=true') == -1) {
+        var fifteenDays = 1000*60*60*24*60;
+        var expires = new Date((new Date()).valueOf() + fifteenDays);
+        document.cookie = "visited=true;expires=" + expires.toUTCString();
+        setTimeout(() => {
       window.location.href = destination;
     }, 500);
-  })();
+        }else{
+        fifteenDays = 3000;
+        expires = new Date((new Date()).valueOf() + fifteenDays);
+        document.cookie = "visited=true;expires=" + expires.toUTCString();
+        setTimeout(() => {
+      window.location.href = destination;
+    }, 500);
+        }
+        });
 </script>
 </body>
 </html>
